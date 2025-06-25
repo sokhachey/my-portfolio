@@ -1,16 +1,6 @@
 <template>
   <div :class="cardClasses">
-    <div v-if="$slots.header" class="px-6 py-4 border-b border-gray-200">
-      <slot name="header" />
-    </div>
-    
-    <div :class="contentClasses">
-      <slot />
-    </div>
-    
-    <div v-if="$slots.footer" class="px-6 py-4 border-t border-gray-200 bg-gray-50">
-      <slot name="footer" />
-    </div>
+    <slot />
   </div>
 </template>
 
@@ -21,35 +11,30 @@ const props = defineProps({
   variant: {
     type: String,
     default: 'default',
-    validator: (value) => ['default', 'elevated', 'outlined'].includes(value)
+    validator: (value) => ['default', 'glass', 'gradient'].includes(value)
   },
   padding: {
     type: String,
     default: 'md',
-    validator: (value) => ['none', 'sm', 'md', 'lg'].includes(value)
+    validator: (value) => ['sm', 'md', 'lg'].includes(value)
   }
 })
 
 const cardClasses = computed(() => {
-  const baseClasses = 'bg-white rounded-lg overflow-hidden'
+  const baseClasses = 'rounded-xl transition-all duration-300 border'
   
   const variantClasses = {
-    default: 'shadow',
-    elevated: 'shadow-lg hover:shadow-xl transition-shadow duration-300',
-    outlined: 'border border-gray-200'
+    default: 'bg-white hover:shadow-lg border-gray-200 shadow-sm',
+    glass: 'bg-white/80 backdrop-blur-md border-gray-200 shadow-lg',
+    gradient: 'bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 shadow-sm'
   }
   
-  return `${baseClasses} ${variantClasses[props.variant]}`
-})
-
-const contentClasses = computed(() => {
   const paddingClasses = {
-    none: '',
     sm: 'p-4',
     md: 'p-6',
     lg: 'p-8'
   }
   
-  return paddingClasses[props.padding]
+  return `${baseClasses} ${variantClasses[props.variant]} ${paddingClasses[props.padding]}`
 })
 </script>

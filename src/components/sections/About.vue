@@ -1,94 +1,70 @@
 <template>
-  <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
+  <section class="py-20 px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Learn more about my background, skills, and journey in web development
-        </p>
+        <h2 class="text-4xl font-bold text-gray-900 mb-2">About Me</h2>
+        <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
       </div>
-      
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        <!-- Profile Info -->
-        <div class="space-y-6">
-          <BaseCard variant="elevated" padding="lg">
-            <template #header>
-              <h3 class="text-2xl font-bold text-gray-900">Profile</h3>
-            </template>
-            <div class="space-y-4 text-gray-700">
-              <p class="leading-relaxed">{{ profile.description }}</p>
-              <p class="leading-relaxed">{{ profile.mission }}</p>
-            </div>
-          </BaseCard>
-          
-          <!-- Education -->
-          <BaseCard variant="elevated" padding="lg">
-            <template #header>
-              <h3 class="text-2xl font-bold text-gray-900">Education</h3>
-            </template>
-            <div class="space-y-6">
-              <div v-for="edu in education" :key="edu.id" class="border-l-4 border-blue-500 pl-6">
-                <div class="flex items-center gap-2 mb-2">
-                  <h4 class="font-semibold text-gray-900">{{ edu.degree }}</h4>
-                  <span v-if="edu.current" class="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Current</span>
-                </div>
-                <p class="text-gray-600">{{ edu.institution }}</p>
-                <p class="text-sm text-gray-500">{{ edu.period }}</p>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left Side: Image + Profile Info -->
+        <div class="relative">
+          <div class="bg-gradient-to-tr from-blue-500 to-indigo-600 rounded-3xl p-6 shadow-xl">
+            <div class="flex flex-col items-center text-center text-white">
+              <div class="w-36 h-36 rounded-full overflow-hidden bg-white mb-6 shadow-lg">
+                <!-- Replace with your actual image path -->
+                <img src="/public/image/IMG_9520.JPG" alt="Sokha SIM" class="w-full h-full object-cover" />
               </div>
+              <h3 class="text-2xl font-bold">Sokha SIM</h3>
+              <p class="text-blue-200 text-sm">Full-Stack Developer</p>
+              <p class="text-sm mt-2 max-w-xs">
+                Passionate about building efficient and scalable web applications.
+              </p>
             </div>
-          </BaseCard>
+          </div>
         </div>
-        
-        <!-- Skills -->
-        <div class="space-y-6">
-          <!-- Hard Skills -->
-          <BaseCard variant="elevated" padding="lg">
-            <template #header>
-              <h3 class="text-2xl font-bold text-gray-900">Technical Skills</h3>
-            </template>
-            <div class="grid grid-cols-2 gap-4">
-              <div v-for="skill in hardSkills" :key="skill.name" class="skill-item">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-sm font-medium text-gray-700">{{ skill.name }}</span>
-                  <span class="text-xs text-gray-500">{{ skill.level }}%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2">
-                  <div class="bg-gradient-to-r from-purple-500 to-blue-500 h-2 rounded-full skill-bar"
-                       :style="{ width: skill.level + '%' }"></div>
-                </div>
-              </div>
-            </div>
-          </BaseCard>
-          
-          <!-- Tools -->
-          <BaseCard variant="elevated" padding="lg">
-            <template #header>
-              <h3 class="text-2xl font-bold text-gray-900">Tools & Technologies</h3>
-            </template>
-            <div class="flex flex-wrap gap-3">
-              <span v-for="tool in tools" :key="tool" 
-                    class="px-4 py-2 bg-gray-100 border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-200 transition-colors">
-                {{ tool }}
-              </span>
-            </div>
-          </BaseCard>
-          
-          <!-- Soft Skills -->
-          <BaseCard variant="elevated" padding="lg">
-            <template #header>
-              <h3 class="text-2xl font-bold text-gray-900">Soft Skills</h3>
-            </template>
-            <div class="grid grid-cols-2 gap-3">
-              <div v-for="skill in softSkills" :key="skill" 
-                   class="flex items-center space-x-2">
-                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+
+        <!-- Right Side: Description -->
+        <div class="text-gray-700 space-y-6">
+          <p class="text-lg leading-relaxed">
+            I'm <strong>Sokha SIM</strong>,a Khmer national born on January 28, 2006, in Pursat, Cambodia. I graduated from high school in 2023 and am currently pursuing an associate degree at Passerelles Numériques Cambodia (PNC) for the 2024–2026 academic years. Through this program, I am developing technical and soft skills to build a career in the IT and digital field.
+          </p>
+
+          <p class="text-lg leading-relaxed">
+            I specialize in building modern, responsive websites using technologies like <strong>Vue.js</strong> and <strong>Laravel</strong>, with a solid foundation in full-stack development.
+          </p>
+
+          <div class="grid grid-cols-2 gap-6 pt-4">
+            <!-- Education Card -->
+            <!-- <div class="bg-white rounded-xl shadow p-4 hover:shadow-lg transition">
+              <div class="flex items-center mb-2">
+                <svg class="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 14l9-5-9-5-9 5 9 5z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                 </svg>
-                <span class="text-gray-700">{{ skill }}</span>
+                <h4 class="text-blue-600 font-semibold">Education</h4>
               </div>
-            </div>
-          </BaseCard>
+              <p class="text-sm font-medium">Associate Degree</p>
+              <p class="text-xs text-gray-500">PNC (2024–2026)</p>
+            </div> -->
+
+            <!-- Location Card -->
+            <!-- <div class="bg-white rounded-xl shadow p-4 hover:shadow-lg transition">
+              <div class="flex items-center mb-2">
+                <svg class="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <h4 class="text-blue-600 font-semibold">Location</h4>
+              </div>
+              <p class="text-sm font-medium">Phnom Penh</p>
+              <p class="text-xs text-gray-500">Cambodia</p>
+            </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -96,9 +72,5 @@
 </template>
 
 <script setup>
-import { usePortfolioStore } from '../../stores/counter'
 import BaseCard from '../global/BaseCard.vue'
-
-const portfolioStore = usePortfolioStore()
-const { profile, education, hardSkills, tools, softSkills } = portfolioStore
 </script>

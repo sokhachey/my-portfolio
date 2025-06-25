@@ -42,7 +42,7 @@
       </div>
 
       <!-- Tools & Technologies -->
-      <div>
+      <div class="mb-16">
         <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Tools & Technologies</h3>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 place-items-center">
           <div
@@ -55,6 +55,20 @@
             </div>
             <p class="text-center font-semibold text-gray-800">{{ tool.name }}</p>
           </div>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Soft Skills</h3>
+        <div class="flex flex-wrap justify-center gap-3">
+          <span
+            v-for="(skill, index) in softSkills"
+            :key="index"
+            class="px-4 py-2 bg-white text-gray-700 rounded-full border border-gray-200 shadow-sm hover:shadow-md transition"
+          >
+            {{ skill }}
+          </span>
         </div>
       </div>
     </div>
@@ -84,5 +98,18 @@ const tools = [
   { name: 'Figma', icon: '/icons/figma.png' },
   { name: 'MySQL', icon: '/icons/mysql.webp' },
   { name: 'Jira', icon: '/icons/jira.png' }
+]
+
+const softSkills = [
+  'Team Collaboration',
+  'Effective Communication',
+  'Problem Solving',
+  'Time Management',
+  'Adaptability',
+  'Creative Thinking',
+  'Attention to Detail',
+  'Project Ownership',
+  'Leadership',
+  'Self-Motivation'
 ]
 </script>

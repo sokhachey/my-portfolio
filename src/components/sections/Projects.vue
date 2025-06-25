@@ -87,7 +87,7 @@ const projects = [
     id: 2,
     title: 'Point of Sale System',
     period: 'March 2025',
-    image: '/images/pos-system.png', // place in /public/images/
+    image: '/image/pos-system.jpg', // place in /public/images/
     description:
       'Full-featured POS system with inventory management, sales analytics, and barcode scanning capabilities.',
     technologies: ['PHP', 'MySQL', 'HTML5', 'SASS', 'Bootstrap', 'jQuery'],

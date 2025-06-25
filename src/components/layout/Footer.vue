@@ -68,8 +68,7 @@ const quickLinks = [
 ]
 
 const socialLinks = [
-  { name: 'GitHub', url: '#' },
-  { name: 'LinkedIn', url: '#' },
-  { name: 'Twitter', url: '#' }
+  { name: 'GitHub', url: 'https://github.com/sokhachey' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/sokha-sim-13ab6b344/' },
 ]
 </script>

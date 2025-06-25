@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center py-4">
         <div @click="$emit('navigate', 'hero')" class="text-2xl font-bold text-gray-900 cursor-pointer">
-          <span class="text-blue-600">S</span>okha<span class="text-blue-600">.</span>
+          <span class="text-blue-600">S</span>okha <span class="text-blue-600">SIM</span>
         </div>
         
         <div class="hidden md:flex space-x-8">

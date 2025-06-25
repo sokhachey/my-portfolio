@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 px-12 bg-gray-50">
+  <section class="py-20 px-12 bg-[#f1f7ff]">
     <div class="max-w-7xl mx-auto px-4 w-full">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         
@@ -16,28 +16,38 @@
 
             <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
               A passionate Web Developer based in Cambodia, creating modern and responsive web applications.
-              Currently studying Computer Science at Passerelles Numériques Cambodia.
+              Currently studying Web Development at Passerelles Numériques Cambodia.
             </p>
           </div>
 
           <!-- Action Buttons -->
           <div class="flex flex-col sm:flex-row gap-4 pt-4">
-            <a href="#" class="px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow-lg hover:shadow-xl transition">
+            <!-- ✅ Download CV button with working download -->
+            <a
+              href="/cv.pdf"
+              download
+              class="px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow-lg hover:shadow-xl transition"
+            >
               <i class="fas fa-download mr-2"></i> Download CV
             </a>
-            <button @click="$emit('get-in-touch')" class="px-8 py-4 rounded-full border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-50 transition">
+
+            <!-- Contact Me Button -->
+            <button
+              @click="$emit('get-in-touch')"
+              class="px-8 py-4 rounded-full border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-50 transition"
+            >
               Contact Me
             </button>
           </div>
         </div>
 
-        <!-- Right Side - Profile Image with Gradient Frame and Floating Dots -->
+        <!-- Right Side - Profile Image -->
         <div class="flex justify-center lg:justify-end relative">
           <div class="relative w-72 h-72">
             <!-- Gradient Border -->
             <div class="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 p-2 shadow-2xl">
               <div class="w-full h-full rounded-full bg-white overflow-hidden flex items-center justify-center">
-                <img src="/public/image/IMG_9520.JPG" alt="Sokha SIM" class="w-full h-full object-cover rounded-full" />
+                <img src="/image/IMG_9520.JPG" alt="Sokha SIM" class="w-full h-full object-cover rounded-full" />
               </div>
             </div>
 
@@ -54,8 +64,6 @@
 
 <script setup>
 defineEmits(['get-in-touch'])
-
-// You can put your actual image in `public/images/profile.png`
 </script>
 
 <style scoped>
@@ -71,7 +79,3 @@ defineEmits(['get-in-touch'])
   animation: float 3s ease-in-out infinite;
 }
 </style>
-
-<!-- Include FontAwesome (optional) -->
-<!-- You can import icons from packages or via CDN like: -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /> -->

@@ -31,7 +31,7 @@
           </p>
 
           <p class="text-lg leading-relaxed">
-            I specialize in building modern, responsive websites using technologies like <strong>Vue.js</strong> and <strong>Laravel</strong>, with a solid foundation in full-stack development.
+           I enjoy learning new things and practicing my skills. I believe that teamwork, idea-sharing, and continuous improvement are key to helping a company grow and succeed.
           </p>
 
           <div class="grid grid-cols-2 gap-6 pt-4">
